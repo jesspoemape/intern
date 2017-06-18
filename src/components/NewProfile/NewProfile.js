@@ -2,38 +2,22 @@ import React, { Component } from 'react';
 import './NewProfile.css';
 
 class NewProfile extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            inputName: '',
-            inputTagline: '',
-            inputProfilePic: '',
-            inputBio: '',
-            newUser: {name: '', tagline: '', profilePic: '', bio:''}
+            
         }
 
-        this.handleBioChange = this.handleChange.bind(this, 'inputBio');
-        this.handleNameChange = this.handleChange.bind(this, 'inputName');
-        this.handlePicChange = this.handleChange.bind(this, 'inputProfilePic');
-        this.handleTagChange = this.handleChange.bind(this, 'inputTagline');
+        this.handleBioChange = this.handleChange.bind(this, 'bio');
+        this.handleNameChange = this.handleChange.bind(this, 'name');
+        this.handlePicChange = this.handleChange.bind(this, 'profilePic');
+        this.handleTagChange = this.handleChange.bind(this, 'tagline');
     }
 
 // class method to handle input of user info
 handleChange(field, event) {
-    console.log(event.target.value);
+    console.log(field, event.target.value);
     this.setState({ [field]: event.target.value} );
-}
-
-// class method to create a new account object
-newProfile() {
-    this.setState({
-        newUser: Object.assign({}, {
-            name: inputName,
-            tagline: inputTagline,
-            profilePic: inputProfilePic,
-            bio: inputBio
-            })
-        });
 }
 
     render() {

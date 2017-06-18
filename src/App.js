@@ -11,16 +11,25 @@ class App extends Component {
     super();
 
     this.state = {
-      usersArr: [ {name: 'Jessica', tagline: 'I love bears', profilePic: 'Jprofile.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, 
-                  {name: 'Juan Jorge', tagline: 'I love N64', profilePic: 'JJprofile.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'} 
-                ]
+      usersArr:
+      [ 
+        {name: 'Jessica', tagline: 'I love bears', profilePic: 'Jprofile.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, 
+        {name: 'Juan Jorge', tagline: 'I love N64', profilePic: 'JJprofile.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'} 
+      ],
+      newUser: {name: '', tagline: '', profilePic: '', bio:''}
     }
     this.addUser = this.addUser.bind(this);
   }
 
 // class method to add a new user
-addUser() {
+addUser(newUser) {
   this.setState({
+    newUser: {
+      name: name,
+      tagline: tagline,
+      profilePic: profilePic,
+      bio: bio
+    },
     usersArr: [ ...this.state.usersArr, newUser]
   });
 }
